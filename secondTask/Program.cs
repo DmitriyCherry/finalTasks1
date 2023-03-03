@@ -4,7 +4,18 @@ M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30*/
 
 
-int SumInterval(int beginInterval, int endInterval)
+int SumInterval (int beginInterval, int endInterval)
+{
+    int sum = 0;
+    sum += endInterval;
+    if (endInterval == beginInterval) return endInterval;
+    else
+    {
+        return sum += SumInterval(beginInterval, endInterval - 1);      
+    }
+}
+
+/*int SumInterval(int beginInterval, int endInterval)
 {
     int sum = 0;
     while (beginInterval <= endInterval)
@@ -13,7 +24,7 @@ int SumInterval(int beginInterval, int endInterval)
         beginInterval++;
     }
     return sum;
-}
+}*/
 
 void main()
 {
